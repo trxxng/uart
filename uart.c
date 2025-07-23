@@ -10,8 +10,8 @@ int main() {
     char buffer[64];
     uart_init(uart0, 115200); // khoi tao uart0 baudrate 115200
 
-    gpio_set_function(uart0_tx, UART_FUNCSEL_NUM(uart0, uart0_tx));
-    gpio_set_function(uart0_rx, UART_FUNCSEL_NUM(uart0, uart0_rx));
+    gpio_set_function(uart0_tx, GPIO_FUNC_UART);
+    gpio_set_function(uart0_rx, GPIO_FUNC_UART);
 
     while(1) {
         sprintf(buffer, "Day%d: miss her!\r\n", n++); // tao chuoi
